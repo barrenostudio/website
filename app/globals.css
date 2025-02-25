@@ -2,13 +2,138 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #231f20;
-  --foreground: #fef8e7;
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --body-base-font-family: "Inter", Helvetica;
+  --body-base-font-size: 16px;
+  --body-base-font-style: normal;
+  --body-base-font-weight: 400;
+  --body-base-letter-spacing: 0px;
+  --body-base-line-height: 139.9999976158142%;
+  --body-strong-font-family: "Inter", Helvetica;
+  --body-strong-font-size: 16px;
+  --body-strong-font-style: normal;
+  --body-strong-font-weight: 700;
+  --body-strong-letter-spacing: 0px;
+  --body-strong-line-height: 139.9999976158142%;
+  --golden-hour-yellow: rgba(248, 151, 29, 1);
+  --heading-1-font-family: "Avenir Next Condensed", Helvetica;
+  --heading-1-font-size: 72px;
+  --heading-1-font-style: normal;
+  --heading-1-font-weight: 700;
+  --heading-1-halyard-font-family: "Halyard Display Book", Helvetica;
+  --heading-1-halyard-font-size: 72px;
+  --heading-1-halyard-font-style: normal;
+  --heading-1-halyard-font-weight: 400;
+  --heading-1-halyard-letter-spacing: -1.44px;
+  --heading-1-halyard-line-height: 72px;
+  --heading-1-halyard-color: rgba(254, 248, 231, 1);
+  --heading-1-letter-spacing: 0px;
+  --heading-1-line-height: 72px;
+  --heading-3-font-family: "Dico Mono", Helvetica;
+  --heading-3-font-size: 36px;
+  --heading-3-font-style: normal;
+  --heading-3-font-weight: 400;
+  --heading-3-halyard-font-family: "Halyard Display Book", Helvetica;
+  --heading-3-halyard-font-size: 36px;
+  --heading-3-halyard-font-style: normal;
+  --heading-3-halyard-font-weight: 400;
+  --heading-3-halyard-letter-spacing: 0px;
+  --heading-3-halyard-line-height: normal;
+  --heading-3-letter-spacing: -2.16px;
+  --heading-3-line-height: 61px;
+  --heritage-green: rgba(34, 62, 47, 1);
+  --midnight-blue: rgba(41, 49, 68, 1);
+  --noche-black: #231f20;
+  --off-blanco: #fef8e7;
+  --paragraph-font-family: "Halyard Display Book", Helvetica;
+  --paragraph-font-size: 18px;
+  --paragraph-font-style: normal;
+  --paragraph-font-weight: 400;
+  --paragraph-letter-spacing: 0px;
+  --paragraph-line-height: 18px;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    color: var(--off-blanco);
+    background: var(--noche-black);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
