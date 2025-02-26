@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import LogoAnimated from "./animation/LogoAnimated";
+import { CldVideoPlayer } from "next-cloudinary";
 
 const Hero = () => {
   const videoRef = useRef<HTMLDivElement>(null);
