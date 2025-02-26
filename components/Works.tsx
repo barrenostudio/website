@@ -21,7 +21,7 @@ const Works = () => {
           >
             <CldImage
               width="460"
-              height={String(image.height)}
+              height={Number(image.height)}
               src={image.url}
               crop="fill"
               alt={image.url}

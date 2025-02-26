@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Brand {
   name: string;
@@ -8,19 +9,19 @@ interface Brand {
 const brandList: Brand[] = [
   {
     name: "UNIQLO",
-    icon: "ICON",
+    icon: "/uniqlo.svg",
   },
   {
     name: "UNIVERSITY OF MELBOURNE",
-    icon: "ICON",
+    icon: "/unimelb.svg",
   },
   {
-    name: "HUME CITY COUNCIL",
-    icon: "ICON",
+    name: "CULTURE IS LIFE",
+    icon: "/culture.svg",
   },
   {
     name: "YSL BEAUTY",
-    icon: "ICON",
+    icon: "/ysl.svg",
   },
 ];
 
@@ -29,11 +30,14 @@ const Brands = () => {
     <div className="bg-off-blanco w-full p-3">
       <div className="flex flex-row items-center justify-center gap-4">
         {brandList.map((brand) => (
-          <div key={brand.name} className="flex">
-            <h2 className="font-heading-3-halyard text-3xl text-noche-black">
+          <div key={brand.name} className="flex items-center justify-center">
+            <div className="h-[64px] w-[64px] relative">
+              <Image src={brand.icon} fill={true} alt={brand.name} />
+            </div>
+
+            <h2 className="font-heading-3-halyard text-3xl text-noche-black pl-3">
               {brand.name}
             </h2>
-            <p>{brand.icon}</p>
           </div>
         ))}
       </div>
