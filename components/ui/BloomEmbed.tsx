@@ -1,5 +1,15 @@
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    bloomSettings?: {
+      userId: string;
+      profileId: string;
+    };
+    bloomScript?: HTMLScriptElement;
+  }
+}
+
 const BloomEmbed = ({ formId }: { formId: string }) => {
   useEffect(() => {
     if (typeof window !== "undefined") {

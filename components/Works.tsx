@@ -1,5 +1,7 @@
 import { CldImage } from "next-cloudinary";
 import React from "react";
+import { Button } from "./ui/button";
+import { ChevronRight } from "lucide-react";
 
 const portfolioImages = [
   { url: "Gabriel_Gabby_Couple_Shoot-52_iwjmga", height: "925" },
@@ -28,6 +30,21 @@ const Works = () => {
             />
           </div>
         ))}
+      </div>
+      <div className="w-[800px] h-[61px] relative">
+        <div className="w-[800px] h-[52px] left-0 top-[10px] absolute">
+          <div className="w-[800px] h-[52px] left-0 top-0 absolute bg-[#fef8e7] rounded-tl-[10px] rounded-bl-[10px]" />
+        </div>
+        <div className="left-[387px] top-0 absolute text-[#f8971d] text-4xl font-bold font-['Dico_Mono'] leading-[61px]">
+          SEE MORE WORKS{" "}
+          <Button
+            variant="outline"
+            size="icon"
+            className="w-[38px] h-[38px] p-0 bg-golden-hour-yellow border-none rounded-md hover:bg-golden-hour-yellow/90"
+          >
+            <ChevronRight className="h-6 w-6 text-off-blanco" />
+          </Button>
+        </div>
       </div>
     </section>
   );
