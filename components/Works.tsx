@@ -12,7 +12,7 @@ const portfolioImages = [
 const Works = () => {
   return (
     <section className="flex flex-col w-full max-w-[1440px] items-end gap-2.5 pb-[100px] px-5">
-      <h2 className="text-golden-hour-yellow text-[72px] text-center font-heading-1-halyard">
+      <h2 className="text-golden-hour-yellow text-[72px] text-center font-heading-1">
         WORKS
       </h2>
       <div className="flex items-center">
@@ -32,17 +32,17 @@ const Works = () => {
         ))}
       </div>
       <div className="w-[800px] h-[61px] relative">
-        <div className="w-[800px] h-[52px] left-0 top-[10px] absolute">
-          <div className="w-[800px] h-[52px] left-0 top-0 absolute bg-[#fef8e7] rounded-tl-[10px] rounded-bl-[10px]" />
+        <div className="w-[800px] h-[52px] left-0 top-[6px] absolute">
+          <div className="w-[800px] h-[52px] left-0 top-0 absolute bg-off-blanco rounded-tl-[10px] rounded-bl-[10px]" />
         </div>
-        <div className="left-[387px] top-0 absolute text-[#f8971d] text-4xl font-bold font-['Dico_Mono'] leading-[61px]">
+        <div className="left-[387px] top-0 absolute text-[#f8971d] text-3xl font-bold font-heading-3 leading-[61px]">
           SEE MORE WORKS{" "}
           <Button
             variant="outline"
             size="icon"
-            className="w-[38px] h-[38px] p-0 bg-golden-hour-yellow border-none rounded-md hover:bg-golden-hour-yellow/90"
+            className="w-[32px] h-[32px] p-0 bg-off-blanco border-none rounded-md hover:bg-golden-hour-yellow/90"
           >
-            <ChevronRight className="h-6 w-6 text-off-blanco" />
+            <ChevronRight className="h-8 w-8 text-noche-black" />
           </Button>
         </div>
       </div>

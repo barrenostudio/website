@@ -29,13 +29,16 @@ const Brands = () => {
   return (
     <div className="bg-off-blanco w-full p-3">
       <div className="flex flex-row items-center justify-center gap-4">
+        <div className="font-heading-3 text-3xl text-noche-black">
+          BRAND COLLABORATIONS
+        </div>
         {brandList.map((brand) => (
           <div key={brand.name} className="flex items-center justify-center">
             <div className="h-[64px] w-[64px] relative">
               <Image src={brand.icon} fill={true} alt={brand.name} />
             </div>
 
-            <h2 className="font-heading-3-halyard text-3xl text-noche-black pl-3">
+            <h2 className="font-heading-3-halyard text-2xl text-noche-black pl-3">
               {brand.name}
             </h2>
           </div>

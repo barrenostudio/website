@@ -22,7 +22,7 @@
   --body-strong-letter-spacing: 0px;
   --body-strong-line-height: 139.9999976158142%;
   --golden-hour-yellow: rgba(248, 151, 29, 1);
-  --heading-1-font-family: "Avenir Next Condensed", Helvetica;
+  --heading-1-font-family: "Grafier Black", Helvetica;
   --heading-1-font-size: 72px;
   --heading-1-font-style: normal;
   --heading-1-font-weight: 700;
@@ -32,10 +32,10 @@
   --heading-1-halyard-font-weight: 400;
   --heading-1-halyard-letter-spacing: -1.44px;
   --heading-1-halyard-line-height: 72px;
-  --heading-1-halyard-color: rgba(254, 248, 231, 1);
+  --heading-1-halyard-color: #231f20;
   --heading-1-letter-spacing: 0px;
   --heading-1-line-height: 72px;
-  --heading-3-font-family: "Dico Mono", Helvetica;
+  --heading-3-font-family: "Grafier Regular", Helvetica;
   --heading-3-font-size: 36px;
   --heading-3-font-style: normal;
   --heading-3-font-weight: 400;
@@ -49,8 +49,8 @@
   --heading-3-line-height: 61px;
   --heritage-green: rgba(34, 62, 47, 1);
   --midnight-blue: rgba(41, 49, 68, 1);
-  --noche-black: #231f20;
-  --off-blanco: #fef8e7;
+  --noche-black: #fef8e7;
+  --off-blanco: #231f20;
   --paragraph-font-family: "Halyard Display Book", Helvetica;
   --paragraph-font-size: 18px;
   --paragraph-font-style: normal;
@@ -125,6 +125,22 @@
 
     --radius: 0.5rem;
   }
+}
+
+@font-face {
+  font-family: "Grafier Black";
+  src: url("/fonts/PPGrafier-Black.woff") format("woff2"),
+    url("/fonts/PPGrafier-Black.woff2") format("woff"); /* Fallback */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Grafier Regular";
+  src: url("/fonts/PPGrafier-Regular.woff") format("woff2"),
+    url("/fonts/PPGrafier-Regular.woff2") format("woff"); /* Fallback */
+  font-weight: normal;
+  font-style: normal;
 }
 
 @layer base {

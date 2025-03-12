@@ -8,7 +8,7 @@ const TextAnimation = ({ text }: { text: string }) => {
       initial={{ y: 25, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="w-[408px] font-heading-1-halyard text-off-blanco text-center text-[72px] tracking-[-1.44px] leading-[72px]" // Apply your styles here
+      className="w-[408px] font-heading-1-halyard text-noche-black text-center text-[72px] tracking-[-1.44px] leading-[72px]" // Apply your styles here
     >
       {text}
     </motion.h1>

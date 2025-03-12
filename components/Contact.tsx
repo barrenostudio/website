@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section className="flex flex-wrap">
       <div className="flex flex-col items-center justify-center gap-12 w-full max-w-[1135px] mx-auto">
-        <h1 className="font-heading-1-halyard text-[72px] text-[#f8971d] text-center">
+        <h1 className="font-heading-1 text-[72px] text-[#f8971d] text-center">
           COLLABORATE WITH US
         </h1>
 
@@ -22,10 +22,9 @@ const Contact = () => {
             />
           </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="font-heading-3-halyard text-off-blanco text-[60px] text-center">
-              <span>We </span>
-              <span className="underline">listen</span>
+          <div className="flex flex-col items-center justify-center gap-8">
+            <h2 className="font-heading-3 text-off-blanco text-[52px] text-center ">
+              <span>We listen</span>
               <br />
               <span>we DON&apos;T judge</span>
             </h2>
