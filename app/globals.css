@@ -8,7 +8,12 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
+  --black-bg: rgba(0, 0, 0, 1);
   --body-base-font-family: "Inter", Helvetica;
   --body-base-font-size: 16px;
   --body-base-font-style: normal;
@@ -18,28 +23,27 @@
   --body-strong-font-family: "Inter", Helvetica;
   --body-strong-font-size: 16px;
   --body-strong-font-style: normal;
-  --body-strong-font-weight: 700;
+  --body-strong-font-weight: 600;
   --body-strong-letter-spacing: 0px;
   --body-strong-line-height: 139.9999976158142%;
-  --golden-hour-yellow: rgba(248, 151, 29, 1);
-  --heading-1-font-family: "Grafier Black", Helvetica;
-  --heading-1-font-size: 72px;
+  --golden-hour-yellow: rgba(248, 157, 29, 1);
+  --heading-1-font-family: "PP Formula Regular", Helvetica;
+  --heading-1-font-size: 96px;
   --heading-1-font-style: normal;
-  --heading-1-font-weight: 700;
-  --heading-1-halyard-font-family: "Halyard Display Book", Helvetica;
-  --heading-1-halyard-font-size: 72px;
+  --heading-1-font-weight: 400;
+  --heading-1-halyard-font-family: "Halyard", Helvetica;
+  --heading-1-halyard-font-size: 192px;
   --heading-1-halyard-font-style: normal;
   --heading-1-halyard-font-weight: 400;
   --heading-1-halyard-letter-spacing: -1.44px;
-  --heading-1-halyard-line-height: 72px;
-  --heading-1-halyard-color: #231f20;
+  --heading-1-halyard-line-height: 192px;
   --heading-1-letter-spacing: 0px;
-  --heading-1-line-height: 72px;
-  --heading-3-font-family: "Grafier Regular", Helvetica;
+  --heading-1-line-height: 96px;
+  --heading-3-font-family: "PP Formula Regular", Helvetica;
   --heading-3-font-size: 36px;
   --heading-3-font-style: normal;
   --heading-3-font-weight: 400;
-  --heading-3-halyard-font-family: "Halyard Display Book", Helvetica;
+  --heading-3-halyard-font-family: "Halyard", Helvetica;
   --heading-3-halyard-font-size: 36px;
   --heading-3-halyard-font-style: normal;
   --heading-3-halyard-font-weight: 400;
@@ -48,15 +52,23 @@
   --heading-3-letter-spacing: -2.16px;
   --heading-3-line-height: 61px;
   --heritage-green: rgba(34, 62, 47, 1);
+  --highlight-colour: rgba(190, 159, 45, 1);
+  --highlight-font-family: "PP Formula Regular", Helvetica;
+  --highlight-font-size: 72px;
+  --highlight-font-style: normal;
+  --highlight-font-weight: 400;
+  --highlight-letter-spacing: 0px;
+  --highlight-line-height: 72px;
   --midnight-blue: rgba(41, 49, 68, 1);
-  --noche-black: #fef8e7;
-  --off-blanco: #231f20;
-  --paragraph-font-family: "Halyard Display Book", Helvetica;
-  --paragraph-font-size: 18px;
+  --noche-black: rgb(0, 0, 0);
+  --off-blanco: rgba(254, 248, 231, 1);
+  --paragraph-font-family: "PP Mori", Helvetica;
+  --paragraph-font-size: 23.5px;
   --paragraph-font-style: normal;
   --paragraph-font-weight: 400;
   --paragraph-letter-spacing: 0px;
-  --paragraph-line-height: 18px;
+  --paragraph-line-height: 23.5px;
+  --secondary-colour: rgba(19, 102, 164, 1);
 }
 
 @layer base {
@@ -125,6 +137,29 @@
 
     --radius: 0.5rem;
   }
+}
+
+@font-face {
+  font-family: "Halyard";
+  src: url("/fonts/Halyard Display Book.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Formula Regular";
+  src: url("/fonts/PPFormula-Regular.woff") format("woff2"),
+    url("/fonts/PPFormula-Regular.woff2") format("woff"); /* Fallback */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Mori";
+  src: url("/fonts/PPMori-Regular.woff") format("woff2"),
+    url("/fonts/PPMori-Regular.woff2") format("woff"); /* Fallback */
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
