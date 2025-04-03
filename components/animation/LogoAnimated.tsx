@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -8,7 +7,7 @@ const TextAnimation = ({ text }: { text: string }) => {
       initial={{ y: 25, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="font-[var(--heading-1-halyard-font-family)] leading-none lg:text-[160px] md:text-[128px] sm:text-[96px] text-[64px] text-off-blanco text-center tracking-[-1.44px]"
+      className="font-heading-1-halyard z-90 leading-none lg:text-[192px] md:text-[128px] sm:text-[96px] text-[64px] text-off-blanco text-center tracking-[-1.44px]"
     >
       {text}
     </motion.h1>
@@ -38,15 +37,7 @@ function LogoAnimated() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 items-center justify-center w-full overflow-hidden">
-      {/* <Image
-        ref={imageRef}
-        src="/logo-white.png"
-        alt="barreno logo"
-        width={200}
-        height={200}
-        style={{ opacity: 0 }} // this was added to fix the flash of white.
-      /> */}
+    <div className="fixed mix-blend-exclusion z-90 bottom-0 items-center justify-center w-full overflow-hidden">
       <TextAnimation text="Barreno Studio" />
     </div>
   );

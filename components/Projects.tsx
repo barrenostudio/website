@@ -1,7 +1,7 @@
 import { CldImage } from "next-cloudinary";
 import React from "react";
 import { Button } from "./ui/button";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight, Icon, MoveRight } from "lucide-react";
 import { image } from "framer-motion/client";
 
 const portfolioImages = [
@@ -34,20 +34,18 @@ const Works = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center gap-16 py-24 w-full bg-black">
+    <section className="flex flex-col items-center justify-center gap-16 py-24 w-full">
       <h2 className="w-full text-7xl max-w-[1200px] font-heading-1 text-off-blanco text-right">
         Projects
       </h2>
-
       <h3 className="w-full text-4xl font-heading-1 text-off-blanco text-center">
         We don’t just press record. We craft stories that hit differently.
       </h3>
-
       <div className="flex flex-wrap items-center justify-center gap-6 w-full max-w-[1440px] relative">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col w-full md:w-[428px] rounded-xl relative object-fill overflow-clip"
+            className="flex flex-col w-full md:w-[428px] rounded-[20px] overflow-hidden relative group"
           >
             {project.image && (
               <CldImage
@@ -56,11 +54,12 @@ const Works = () => {
                 src={project.image}
                 crop="fill"
                 alt={project.image}
+                className="rounded-[20px] transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-90"
               />
             )}
 
             <div
-              className={`font-paragraph text-paragraph bottom-2 absolute text-off-blanco m-4 ${
+              className={`font-paragraph text-paragraph bottom-2 absolute text-off-blanco m-4 transition-opacity duration-300 ease-in-out group-hover:opacity-100 ${
                 project.align === "center"
                   ? "text-center"
                   : project.align === "right"
@@ -73,13 +72,16 @@ const Works = () => {
           </div>
         ))}
       </div>
-
-      <a
-        href="#"
-        className="font-heading-1 font-normal text-off-blanco text-[32px] text-center tracking-[0] leading-[23.5px] underline hover:opacity-80 transition-opacity"
-      >
-        MORE OF OUR WORK
-      </a>
+      <div className="w-full flex flex-row justify-end items-center">
+        {/* <MoveRight size={42} className="m-4" /> */}
+        <img src="ArrowRight.svg" alt="arrow right" />
+        <a
+          href="#"
+          className="font-heading-1 flex font-normal text-off-blanco text-[32px] text-right tracking-[0] leading-[23.5px] hover:opacity-80 transition-opacity"
+        >
+          MORE OF OUR WORK
+        </a>
+      </div>
     </section>
     // <section className="flex flex-col w-full max-w-[1440px] items-end gap-2.5 pb-[100px] px-5">
     //   <h2 className="text-golden-hour-yellow text-[72px] text-center font-heading-1">

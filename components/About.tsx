@@ -18,13 +18,14 @@ export default function ContactSection() {
     <section className="flex justify-center py-[100px]">
       <Card className="flex flex-row gap-9 bg-transparent border-0 shadow-none">
         <CardContent className="p-0">
-          <div className="w-full max-w-[867px] h-[609px] rounded-[20px] bg-cover bg-center">
+          <div className="w-full h-[600px] object-fill overflow-clip">
             <CldImage
-              width="867"
-              height="609"
+              width="800"
+              height="600"
               src={sectionData.imageSrc}
               crop="fill"
               alt="barreno studio team"
+              className="rounded-[20px]"
             />
           </div>
         </CardContent>

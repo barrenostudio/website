@@ -43,11 +43,6 @@ const Footer = () => {
             <br />
             All Rights Reserved
           </p>
-          <img
-            src=""
-            alt="Barreno Wordmark"
-            className="w-[100px] h-[100px] object-cover"
-          />
         </div>
       </div>
     </footer>

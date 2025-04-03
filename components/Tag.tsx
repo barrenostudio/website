@@ -9,11 +9,11 @@ const Tag = () => {
           where vision meets precision, and stories come to life.
         </div>
       </div>
-      <div className="h-[800px] w-[480px] rounded-3xl overflow-hidden">
+      <div className="h-[600px] w-[480px] overflow-hidden z-1">
         <CldVideoPlayer
           src="Monique_x_YSL_Beauty_ffpc7o"
           width="480"
-          height="800"
+          height="600"
           id="tag"
           muted
           autoplay
@@ -21,10 +21,10 @@ const Tag = () => {
           controls={false} // Hides all default controls (including menus)
           transformation={{
             width: 480,
-            height: 800,
+            height: 600,
             crop: "fill",
-            gravity: "auto",
           }}
+          className="rounded-[20px] z-1"
         />
       </div>
     </section>
