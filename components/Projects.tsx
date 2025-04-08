@@ -1,14 +1,5 @@
 import { CldImage } from "next-cloudinary";
-import React from "react";
-import { Button } from "./ui/button";
-import { ArrowRight, ChevronRight, Icon, MoveRight } from "lucide-react";
-import { image } from "framer-motion/client";
-
-const portfolioImages = [
-  { url: "Gabriel_Gabby_Couple_Shoot-52_iwjmga", height: "925" },
-  { url: "OrientationWeekDay1-1_h0zlcn", height: "325" },
-  { url: "Mid-AutumnMoonFestival-229_ypqnuu", height: "325" },
-];
+import Link from "next/link";
 
 const Works = () => {
   // Project data for mapping
@@ -22,7 +13,7 @@ const Works = () => {
     {
       id: 2,
       image: "OrientationWeekDay1-1_h0zlcn",
-      description: "UniMelb",
+      description: "Orientation Week",
       align: "center",
     },
     {
@@ -34,18 +25,18 @@ const Works = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center gap-16 py-24 w-full">
-      <h2 className="w-full text-7xl max-w-[1200px] font-heading-1 text-off-blanco text-right">
+    <section className="flex w-full flex-col items-center justify-center gap-10 px-14">
+      <h2 className="w-full text-right font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1">
         Projects
       </h2>
-      <h3 className="w-full text-4xl font-heading-1 text-off-blanco text-center">
+      <h3 className="w-full text-right font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
         We don’t just press record. We craft stories that hit differently.
       </h3>
-      <div className="flex flex-wrap items-center justify-center gap-6 w-full max-w-[1440px] relative">
+      <div className="flex w-full max-w-[1440px] flex-row items-center justify-center gap-2 lg:gap-6">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col w-full md:w-[428px] rounded-[20px] overflow-hidden relative group"
+            className="group flex w-full flex-col overflow-hidden rounded-[20px] md:w-1/3"
           >
             {project.image && (
               <CldImage
@@ -58,29 +49,29 @@ const Works = () => {
               />
             )}
 
-            <div
-              className={`font-paragraph text-paragraph bottom-2 absolute text-off-blanco m-4 transition-opacity duration-300 ease-in-out group-hover:opacity-100 ${
+            {/* <div
+              className={`absolute bottom-2 m-4 font-paragraph text-paragraph text-off-blanco transition-opacity duration-300 ease-in-out group-hover:opacity-100 ${
                 project.align === "center"
                   ? "text-center"
                   : project.align === "right"
-                  ? "text-right"
-                  : "text-left"
+                    ? "text-right"
+                    : "text-left"
               }`}
             >
               {project.description}
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
-      <div className="w-full flex flex-row justify-end items-center">
+      <div className="flex w-full flex-row items-center justify-end">
         {/* <MoveRight size={42} className="m-4" /> */}
         <img src="ArrowRight.svg" alt="arrow right" />
-        <a
-          href="#"
-          className="font-heading-1 flex font-normal text-off-blanco text-[32px] text-right tracking-[0] leading-[23.5px] hover:opacity-80 transition-opacity"
+        <Link
+          href="/archives"
+          className="flex rounded-md px-5 pb-2 pt-4 text-right font-heading-1 text-heading-3-md text-off-blanco transition-colors duration-200 hover:bg-white/10"
         >
           MORE OF OUR WORK
-        </a>
+        </Link>
       </div>
     </section>
     // <section className="flex flex-col w-full max-w-[1440px] items-end gap-2.5 pb-[100px] px-5">

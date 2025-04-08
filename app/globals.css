@@ -27,30 +27,53 @@ html {
   --body-strong-letter-spacing: 0px;
   --body-strong-line-height: 139.9999976158142%;
   --golden-hour-yellow: rgba(248, 157, 29, 1);
+  /* Heading 1 */
   --heading-1-font-family: "PP Formula Regular", Helvetica;
-  --heading-1-font-size: 96px;
-  --heading-1-font-style: normal;
-  --heading-1-font-weight: 400;
-  --heading-1-halyard-font-family: "Halyard", Helvetica;
-  --heading-1-halyard-font-size: 192px;
-  --heading-1-halyard-font-style: normal;
-  --heading-1-halyard-font-weight: 400;
-  --heading-1-halyard-letter-spacing: -1.44px;
-  --heading-1-halyard-line-height: 192px;
+  --heading-1-font-size: 5rem;
+  --heading-1-line-height: calc(var(--heading-1-font-size) * 1);
   --heading-1-letter-spacing: 0px;
-  --heading-1-line-height: 96px;
+
+  --heading-1-font-size-md: 4rem;
+  --heading-1-line-height-md: calc(var(--heading-1-font-size-md) * 1);
+  --heading-1-letter-spacing-md: 0px;
+
+  --heading-1-font-size-sm: 3rem;
+  --heading-1-line-height-sm: calc(var(--heading-1-font-size-sm) * 1);
+  --heading-1-letter-spacing-sm: 0px;
+
+  --heading-1-halyard-font-family: "Halyard", Helvetica;
+  --heading-1-halyard-font-size: 13vw;
+  --heading-1-halyard-letter-spacing: -2%;
+  --heading-1-halyard-line-height: calc(var(--heading-1-halyard-font-size) * 1);
+
+  /* Heading 3 */
   --heading-3-font-family: "PP Formula Regular", Helvetica;
-  --heading-3-font-size: 36px;
-  --heading-3-font-style: normal;
-  --heading-3-font-weight: 400;
-  --heading-3-halyard-font-family: "Halyard", Helvetica;
-  --heading-3-halyard-font-size: 36px;
-  --heading-3-halyard-font-style: normal;
-  --heading-3-halyard-font-weight: 400;
-  --heading-3-halyard-letter-spacing: 0px;
-  --heading-3-halyard-line-height: normal;
-  --heading-3-letter-spacing: -2.16px;
-  --heading-3-line-height: 61px;
+  --heading-3-font-size: 1.6rem;
+  --heading-3-line-height: calc(var(--heading-3-font-size) * 1);
+  --heading-3-letter-spacing: -0.1rem;
+
+  --heading-3-font-size-md: 1.4rem;
+  --heading-3-line-height-md: calc(var(--heading-3-font-size-md) * 1);
+  --heading-3-letter-spacing-md: -0.1rem;
+
+  --heading-3-font-size-sm: 1.2rem;
+  --heading-3-line-height-sm: calc(var(--heading-3-font-size-sm) * 1);
+  --heading-3-letter-spacing-sm: -0.1rem;
+
+  /* Paragraph */
+  --paragraph-font-family: "PP Mori", Helvetica;
+  --paragraph-font-size: 1rem;
+  --paragraph-line-height: calc(var(--paragraph-font-size) * 1);
+  --paragraph-letter-spacing: 0rem;
+
+  --paragraph-font-size-md: 1rem;
+  --paragraph-line-height-md: calc(var(--paragraph-font-size-md) * 1);
+  --paragraph-letter-spacing-md: 0rem;
+
+  --paragraph-font-size-sm: 0.8rem;
+  --paragraph-line-height-sm: calc(var(--paragraph-font-size-sm) * 1);
+  --paragraph-letter-spacing-sm: 0rem;
+
   --heritage-green: rgba(34, 62, 47, 1);
   --highlight-colour: rgba(190, 159, 45, 1);
   --highlight-font-family: "PP Formula Regular", Helvetica;
@@ -62,12 +85,6 @@ html {
   --midnight-blue: rgba(41, 49, 68, 1);
   --noche-black: rgb(0, 0, 0);
   --off-blanco: rgba(254, 248, 231, 1);
-  --paragraph-font-family: "PP Mori", Helvetica;
-  --paragraph-font-size: 23.5px;
-  --paragraph-font-style: normal;
-  --paragraph-font-weight: 400;
-  --paragraph-letter-spacing: 0px;
-  --paragraph-line-height: 23.5px;
   --secondary-colour: rgba(19, 102, 164, 1);
 }
 
@@ -148,7 +165,8 @@ html {
 
 @font-face {
   font-family: "PP Formula Regular";
-  src: url("/fonts/PPFormula-Regular.woff") format("woff2"),
+  src:
+    url("/fonts/PPFormula-Regular.woff") format("woff2"),
     url("/fonts/PPFormula-Regular.woff2") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
@@ -156,7 +174,8 @@ html {
 
 @font-face {
   font-family: "PP Mori";
-  src: url("/fonts/PPMori-Regular.woff") format("woff2"),
+  src:
+    url("/fonts/PPMori-Regular.woff") format("woff2"),
     url("/fonts/PPMori-Regular.woff2") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
@@ -164,7 +183,8 @@ html {
 
 @font-face {
   font-family: "Grafier Black";
-  src: url("/fonts/PPGrafier-Black.woff") format("woff2"),
+  src:
+    url("/fonts/PPGrafier-Black.woff") format("woff2"),
     url("/fonts/PPGrafier-Black.woff2") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
@@ -172,7 +192,8 @@ html {
 
 @font-face {
   font-family: "Grafier Regular";
-  src: url("/fonts/PPGrafier-Regular.woff") format("woff2"),
+  src:
+    url("/fonts/PPGrafier-Regular.woff") format("woff2"),
     url("/fonts/PPGrafier-Regular.woff2") format("woff"); /* Fallback */
   font-weight: normal;
   font-style: normal;
@@ -185,6 +206,8 @@ html {
   body {
     color: var(--off-blanco);
     background: var(--noche-black);
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }

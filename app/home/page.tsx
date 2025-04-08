@@ -15,12 +15,12 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full bg-noche-black min-h-screen">
+    <div className="flex min-h-screen w-full flex-col bg-noche-black">
       <header>
         <Navbar />
       </header>
 
-      <main className="flex flex-col items-center justify-center gap-[100px] relative bg-noche-black min-h-screen">
+      <main className="relative flex min-h-screen flex-col items-center justify-center gap-[160px] bg-noche-black">
         <Hero />
 
         <section id="tag">

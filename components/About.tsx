@@ -11,39 +11,41 @@ export default function ContactSection() {
       "Barreno Studios is a leading creative agency based in Melbourne, Australia - we specialise in delivering tailored solutions that resonate with diverse audiences driving positive impact and culture.",
       "Our mission is to empower businesses, organisations, and individuals to succeed through collaboration/co—design, creating timeless high-quality media assets.",
     ],
-    imageSrc: "team_shot2_yr1x4d",
+    imageSrc: "barreno-studio/FullashipStudio-89",
+    w: 1440,
+    h: 1080,
   };
 
   return (
-    <section className="flex justify-center py-[100px]">
-      <Card className="flex flex-row gap-9 bg-transparent border-0 shadow-none">
-        <CardContent className="p-0">
-          <div className="w-full h-[600px] object-fill overflow-clip">
+    <section id="target-2" className="flex justify-center px-14">
+      <Card className="flex flex-col gap-4 border-0 bg-transparent shadow-none md:flex-row">
+        <CardContent className="w-full p-0 md:w-1/2 lg:w-3/5">
+          <div className="w-full overflow-clip object-fill">
             <CldImage
-              width="800"
-              height="600"
+              width={sectionData.w}
+              height={sectionData.h}
               src={sectionData.imageSrc}
               crop="fill"
               alt="barreno studio team"
-              className="rounded-[20px]"
+              className="h-full w-full rounded-[20px]"
             />
           </div>
         </CardContent>
 
-        <CardContent className="flex flex-col justify-center gap-[79px] p-0 max-w-[407px]">
-          <h2 className="font-heading-1 lg:text-8xl md:text-6xl text-off-blanco">
+        <CardContent className="flex w-full flex-col justify-center gap-4 md:w-1/2 lg:w-2/5">
+          <h1 className="font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1">
             {sectionData.heading}
-          </h2>
+          </h1>
 
           <div className="text-off-blanco">
-            <span className="block font-heading-1 font-normal text-[#fef8e7] text-[32px] tracking-[0] leading-[23.5px] mb-4">
+            <span className="mb-4 block font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
               {sectionData.subheading}
             </span>
 
             {sectionData.description.map((paragraph, index) => (
               <p
                 key={index}
-                className="font-paragraph text-paragraph tracking-paragraph leading-paragraph mb-4 last:mb-0"
+                className="mb-4 font-paragraph text-paragraph-sm last:mb-0 md:text-paragraph-md lg:text-paragraph"
               >
                 {paragraph}
               </p>

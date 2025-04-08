@@ -1,16 +1,26 @@
-import { CldVideoPlayer } from "next-cloudinary";
 import React from "react";
 
 const Tag = () => {
   return (
-    <section className="flex flex-wrap items-center justify-center gap-[127px] p-10">
-      <div className="w-[496px] bg-transparent border-none">
-        <div className="text-center text-[72px] leading-[72px] tracking-[-1.44px] font-heading-1">
-          where vision meets precision, and stories come to life.
+    <section className="-mt-[160px] flex w-full flex-col items-center justify-center gap-6 px-14 md:flex-row">
+      <div className="flex w-full border-none bg-transparent md:w-1/2">
+        <div className="flex text-center font-heading-1 text-heading-1 text-off-blanco">
+          no story left untold
+          {/* where vision meets precision, and stories come to life. */}
         </div>
       </div>
-      <div className="h-[600px] w-[480px] overflow-hidden z-1">
-        <CldVideoPlayer
+      <div className="z-1 flex w-full items-center justify-center overflow-hidden md:w-1/2">
+        <video
+          src="https://res.cloudinary.com/dobclogz9/video/upload/q_auto/c_fill,g_auto,h_600,w_480/v1743490368/Monique_x_YSL_Beauty_ffpc7o.webm"
+          width="480"
+          height="600"
+          muted
+          autoPlay
+          loop
+          playsInline
+          className="z-1 rounded-[20px]"
+        />
+        {/* <CldVideoPlayer
           src="Monique_x_YSL_Beauty_ffpc7o"
           width="480"
           height="600"
@@ -25,7 +35,7 @@ const Tag = () => {
             crop: "fill",
           }}
           className="rounded-[20px] z-1"
-        />
+        /> */}
       </div>
     </section>
   );

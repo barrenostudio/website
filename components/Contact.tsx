@@ -17,10 +17,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="flex justify-center pt-10 pb-[200px] px-8">
-      <Card className="flex flex-row gap-9 bg-transparent border-0 shadow-none">
+    <section className="flex justify-center px-14">
+      <Card className="flex flex-row gap-10 border-0 bg-transparent shadow-none">
         <CardContent className="p-0">
-          <div className="w-full h-[600px] bg-cover bg-center object-fill overflow-clip">
+          <div className="h-[600px] w-full overflow-clip bg-cover bg-center object-fill">
             <CldImage
               width="800"
               height="600"
@@ -32,26 +32,26 @@ const Contact = () => {
           </div>
         </CardContent>
 
-        <CardContent className="flex flex-col justify-center gap-[79px] p-0 max-w-[407px]">
-          <h2 className="font-heading-1 lg:text-8xl md:text-6xl text-off-blanco">
+        <CardContent className="flex max-w-[407px] flex-col justify-center gap-[79px] p-0">
+          <h2 className="font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1">
             {sectionData.heading}
           </h2>
 
           <div className="text-off-blanco">
-            <span className="block font-heading-1 font-normal text-[#fef8e7] text-[32px] tracking-[0] leading-[23.5px] mb-4">
+            <span className="mb-4 block font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
               {sectionData.subheading}
             </span>
 
             {sectionData.description.map((paragraph, index) => (
               <p
                 key={index}
-                className="font-paragraph text-paragraph tracking-paragraph leading-paragraph mb-4 last:mb-0"
+                className="mb-4 font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph"
               >
                 {paragraph}
               </p>
             ))}
             {/* CTA Button */}
-            <Button className="p-6 bg-off-blanco text-noche-black underline rounded-md font-bold [font-family:'Avenir_Next_Condensed-Bold',Helvetica] text-xl">
+            <Button className="mt-4 rounded-md bg-off-blanco p-6 font-paragraph text-paragraph-sm text-noche-black underline md:text-paragraph-md lg:text-paragraph">
               Ready to turn heads?
             </Button>
             <div>

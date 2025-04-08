@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const TextAnimation = ({ text }: { text: string }) => {
@@ -7,37 +7,55 @@ const TextAnimation = ({ text }: { text: string }) => {
       initial={{ y: 25, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="font-heading-1-halyard z-90 leading-none lg:text-[192px] md:text-[128px] sm:text-[96px] text-[64px] text-off-blanco text-center tracking-[-1.44px]"
+      className="z-90 text-center font-heading-1-halyard text-heading-1-halyard text-off-blanco"
     >
       {text}
     </motion.h1>
   );
 };
 
-function LogoAnimated() {
-  const imageRef = useRef<HTMLImageElement>(null);
+function LogoAnimated(
+  {
+    //   scroll,
+    //   entryPoint,
+    // }: {
+    //   scroll: number;
+    //   entryPoint: number;
+  }
+) {
+  const [aboutInView, setAboutInView] = useState(false);
 
   useEffect(() => {
-    const image = imageRef.current;
+    const aboutSection = document.getElementById("target-1");
 
-    if (!image) {
-      return;
-    }
-    image.style.opacity = "0";
+    if (!aboutSection) return;
 
-    const timeout = setTimeout(() => {
-      if (image) {
-        //Double check in case it unmounts
-        image.style.opacity = "1";
-        image.style.transition = "opacity 1.0s ease-in-out";
-      }
-    }, 100);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setAboutInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Trigger when 50% of the About section is visible
+    );
 
-    return () => clearTimeout(timeout);
+    observer.observe(aboutSection);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="fixed mix-blend-exclusion z-90 bottom-0 items-center justify-center w-full overflow-hidden">
+    <div
+      className="z-90 fixed bottom-0 w-full items-center justify-center overflow-hidden mix-blend-exclusion"
+      style={{
+        transform: aboutInView
+          ? "translateY(0vh)" // Move down when About section is visible
+          : "translateY(20vh)",
+        // : scroll > entryPoint
+        //   ? "translateY(0vh)"
+        //   : // ? `translateY(${(1 - (scroll - entryPoint) / (1 - entryPoint)) * 20}vh)`
+        //     "translateY(20vh)",
+        transition: "transform 0.5s ease-in-out", // Smooth animation for transform
+      }}
+    >
       <TextAnimation text="Barreno Studio" />
     </div>
   );

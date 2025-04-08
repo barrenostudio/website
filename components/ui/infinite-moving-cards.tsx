@@ -13,8 +13,8 @@ export const InfiniteMovingCards = ({
 }: {
   items: {
     name: string;
-    title: string;
-    text: string;
+    title?: string;
+    text?: string;
     img?: string;
   }[];
   direction?: "left" | "right";
@@ -51,12 +51,12 @@ export const InfiniteMovingCards = ({
       if (direction === "left") {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "forwards",
+          "forwards"
         );
       } else {
         containerRef.current.style.setProperty(
           "--animation-direction",
-          "reverse",
+          "reverse"
         );
       }
     }
@@ -78,7 +78,7 @@ export const InfiniteMovingCards = ({
         ref={containerRef}
         className={cn(
           "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-          className,
+          className
         )}
       >
         <ul
@@ -86,14 +86,14 @@ export const InfiniteMovingCards = ({
           className={cn(
             "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
             start && "animate-scroll",
-            pauseOnHover && "hover:[animation-play-state:paused]",
+            pauseOnHover && "hover:[animation-play-state:paused]"
           )}
         >
           {items.map((item) => (
             <li className="" key={item.name}>
               <div className="relative z-20 flex flex-row items-center">
                 {item.img && (
-                  <div className="h-[64px] w-[64px] relative mr-3">
+                  <div className="relative mr-3 h-[64px] w-[64px]">
                     <Image
                       src={item.img}
                       alt={item.name}
@@ -103,10 +103,10 @@ export const InfiniteMovingCards = ({
                   </div>
                 )}
                 <span className="flex flex-col gap-1">
-                  <span className="text-md leading-[1.6] font-paragraph text-black">
+                  <span className="text-md font-paragraph leading-[1.6] text-black">
                     {item.name}
                   </span>
-                  <span className="text-sm leading-[1.6] font-paragraph text-gray-400">
+                  <span className="font-paragraph text-sm leading-[1.6] text-gray-400">
                     {item.title}
                   </span>
                 </span>
@@ -122,7 +122,7 @@ export const InfiniteMovingCards = ({
         ref={containerRef}
         className={cn(
           "scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-          className,
+          className
         )}
       >
         <ul
@@ -130,7 +130,7 @@ export const InfiniteMovingCards = ({
           className={cn(
             "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
             start && "animate-scroll",
-            pauseOnHover && "hover:[animation-play-state:paused]",
+            pauseOnHover && "hover:[animation-play-state:paused]"
           )}
         >
           {items.map((item) => (
@@ -141,14 +141,14 @@ export const InfiniteMovingCards = ({
               <blockquote>
                 <div
                   aria-hidden="true"
-                  className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                  className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
                 ></div>
-                <span className="relative z-20 text-sm leading-[1.6] font-paragraph text-black">
+                <span className="relative z-20 font-paragraph text-sm leading-[1.6] text-black">
                   {item.text}
                 </span>
                 <div className="relative z-20 mt-6 flex flex-row items-center">
                   {item.img && (
-                    <div className="h-10 w-10 relative mr-3">
+                    <div className="relative mr-3 h-10 w-10">
                       <Image
                         src={item.img}
                         alt={item.name}
@@ -158,10 +158,10 @@ export const InfiniteMovingCards = ({
                     </div>
                   )}
                   <span className="flex flex-col gap-1">
-                    <span className="text-md leading-[1.6] font-paragraph text-black">
+                    <span className="text-md font-paragraph leading-[1.6] text-black">
                       {item.name}
                     </span>
-                    <span className="text-sm leading-[1.6] font-paragraph text-gray-400">
+                    <span className="font-paragraph text-sm leading-[1.6] text-gray-400">
                       {item.title}
                     </span>
                   </span>

@@ -69,12 +69,78 @@ module.exports = {
         ],
       },
       fontSize: {
-        "heading-1": "var(--heading-1-font-size)",
-        "heading-1-halyard": "var(--heading-1-halyard-font-size)",
-        "heading-3": "var(--heading-3-font-size)",
+        "heading-1-sm": [
+          "var(--heading-1-font-size-sm)", // Font size for small screens
+          {
+            lineHeight: "var(--heading-1-line-height-sm)", // Line height for small screens
+            letterSpacing: "var(--heading-1-letter-spacing-sm)", // Letter spacing for small screens
+          },
+        ],
+        "heading-1-md": [
+          "var(--heading-1-font-size-md)",
+          {
+            lineHeight: "var(--heading-1-line-height-md)",
+            letterSpacing: "var(--heading-1-letter-spacing-md)",
+          },
+        ],
+        "heading-1": [
+          "var(--heading-1-font-size)",
+          {
+            lineHeight: "var(--heading-1-line-height)",
+            letterSpacing: "var(--heading-1-letter-spacing)",
+          },
+        ],
+        "heading-1-halyard": [
+          "var(--heading-1-halyard-font-size)",
+          {
+            lineHeight: "var(--heading-1-halyard-line-height)",
+            letterSpacing: "var(--heading-1-halyard-letter-spacing)",
+          },
+        ],
+        "heading-3-sm": [
+          "var(--heading-3-font-size-sm)", // Font size for small screens
+          {
+            lineHeight: "var(--heading-3-line-height-sm)", // Line height for small screens
+            letterSpacing: "var(--heading-3-letter-spacing-sm)", // Letter spacing for small screens
+          },
+        ],
+        "heading-3-md": [
+          "var(--heading-3-font-size-md)",
+          {
+            lineHeight: "var(--heading-3-line-height-md)",
+            letterSpacing: "var(--heading-3-letter-spacing-md)",
+          },
+        ],
+        "heading-3": [
+          "var(--heading-3-font-size)",
+          {
+            lineHeight: "var(--heading-3-line-height)",
+            letterSpacing: "var(--heading-3-letter-spacing)",
+          },
+        ],
+        "paragraph-sm": [
+          "var(--paragraph-font-size-sm)", // Font size for small screens
+          {
+            lineHeight: "var(--paragraph-line-height-sm)", // Line height for small screens
+            letterSpacing: "var(--paragraph-letter-spacing-sm)", // Letter spacing for small screens
+          },
+        ],
+        "paragraph-md": [
+          "var(--paragraph-font-size-md)",
+          {
+            lineHeight: "var(--paragraph-line-height-md)",
+            letterSpacing: "var(--paragraph-letter-spacing-md)",
+          },
+        ],
+        "paragraph": [
+          "var(--paragraph-font-size)",
+          {
+            lineHeight: "var(--paragraph-line-height)",
+            letterSpacing: "var(--paragraph-letter-spacing)",
+          },
+        ],
         "heading-3-halyard": "var(--heading-3-halyard-font-size)",
         "highlight": "var(--highlight-font-size)",
-        "paragraph": "var(--paragraph-font-size)",
       },
       letterSpacing: {
         "heading-1": "var(--heading-1-letter-spacing)",

@@ -1,13 +1,13 @@
 {
   "semi": true,
-  "trailingComma": "all",
+  "trailingComma": "es5",
   "printWidth": 80,
-  "quoteProps": "consistent",
   "singleQuote": false,
   "tabWidth": 2,
   "useTabs": false,
   "bracketSpacing": true,
   "arrowParens": "always",
   "proseWrap": "preserve",
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

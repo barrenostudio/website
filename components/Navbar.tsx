@@ -10,10 +10,10 @@ import { Menu, X } from "lucide-react";
 
 // Navigation items data
 const navItems = [
-  { label: "Know Us", href: "#about-us" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
-  { label: "Our Best Work", href: "#projects" },
+  { label: "Know Us", href: "/home#about-us" },
+  { label: "Our Best Work", href: "/home#projects" },
+  { label: "Services", href: "/home#services" },
+  { label: "Contact", href: "/home#contact" },
   { label: "Login", href: "/login", isUnderlined: true },
 ];
 
@@ -21,17 +21,16 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full fixed mix-blend-difference top-0 left-0 z-50">
+    <header className="fixed left-0 top-0 z-50 w-full mix-blend-difference">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           {/* Desktop Navigation */}
-          <div className="hidden z-50 md:flex items-center justify-between w-full px-3">
+          <div className="z-50 hidden w-full items-center justify-between px-3 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`flex font-paragraph text-off-blanco rounded-md px-3 py-1 transition-colors duration-200 hover:bg-white/10
-   ${item.isUnderlined ? "underline" : ""}`}
+                className={`flex rounded-md px-3 py-1 font-paragraph text-off-blanco transition-colors duration-200 hover:bg-white/10 ${item.isUnderlined ? "underline" : ""}`}
               >
                 {item.label}
               </Link>
@@ -40,7 +39,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="text-white md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -50,13 +49,13 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-opacity-95 mt-4 py-4 rounded-md">
+          <div className="mt-4 rounded-md bg-opacity-95 py-4 md:hidden">
             <div className="flex flex-col space-y-4 px-4">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`text-white hover:text-gray-300 transition-colors ${
+                  className={`text-white transition-colors hover:text-gray-300 ${
                     item.isUnderlined ? "underline underline-offset-4" : ""
                   }`}
                   onClick={() => setMobileMenuOpen(false)}

@@ -1,67 +1,107 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import LogoAnimated from "./animation/LogoAnimated";
 // import { CldVideoPlayer } from "next-cloudinary";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  // const router = useRouter(); // Access the current route
   const videoRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  // const [videoFixed, setVideoFixed] = useState(true);
-  // const [videoTranslateY, setVideoTranslateY] = useState(0); // New state for video translation
-  // const [blurLevel, setBlurLevel] = useState(12); // Initial blur level
+  const [videoFixed, setVideoFixed] = useState(true);
+  const [videoTranslateY, setVideoTranslateY] = useState(0); // New state for video translation
+  const maxFontSize = 800; // Maximum font size in `vw`
+  const minFontSize = 24; // Minimum font size in `vw`
+  const [fontSize, setFontSize] = useState(minFontSize); // Initial font size in `vw`
+  const [scroll, setScroll] = useState(1); // Initial font size in `vw`
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (sectionRef.current && videoRef.current) {
-  //       const sectionBottom = sectionRef.current.getBoundingClientRect().bottom;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current && videoRef.current) {
+        const sectionBottom = sectionRef.current.getBoundingClientRect().bottom;
 
-  //       if (sectionBottom <= 0) {
-  //         // Section is out of view
-  //         setVideoFixed(false);
-  //         setVideoTranslateY(-sectionBottom); // Translate video with scroll amount
-  //         setBlurLevel(0);
-  //       } else {
-  //         setVideoFixed(true);
-  //         setVideoTranslateY(0); // Reset translation when section is in view
+        if (sectionBottom <= 0) {
+          // Section is out of view
+          setVideoFixed(false);
+          setVideoTranslateY(-sectionBottom); // Translate video with scroll amount
+          setFontSize(maxFontSize);
+        } else {
+          setVideoFixed(true);
+          setVideoTranslateY(0); // Reset translation when section is in view
 
-  //         // Calculate dynamic blur level (adjust values as needed)
-  //         const maxBlur = 6;
-  //         const scrollProgress = Math.max(
-  //           0,
-  //           Math.min(1, sectionBottom / window.innerHeight),
-  //         ); // 0 to 1
-  //         const currentBlur = scrollProgress * maxBlur;
-  //         setBlurLevel(currentBlur);
-  //       }
-  //     }
-  //   };
+          const scrollProgress =
+            1 - Math.max(0, Math.min(1, sectionBottom / window.innerHeight)); // 0 to 1
+          setScroll(scrollProgress);
+          // Increase font size based on scroll progress
+          const newFontSize =
+            minFontSize + scrollProgress * (maxFontSize - minFontSize);
+          setFontSize(newFontSize);
+        }
+      }
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   handleScroll(); // Initial check on mount
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check on mount
 
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <div
         ref={videoRef}
-        className="absolute top-0 left-0 w-screen h-screen overflow-hidden"
+        className="fixed left-0 top-0 h-screen w-screen overflow-hidden"
+        style={{
+          transform: videoFixed
+            ? "translateY(0)"
+            : `translateY(-${videoTranslateY}px)`,
+        }}
       >
         <video
-          src="https://res.cloudinary.com/dobclogz9/video/upload/q_auto/c_fill,g_auto,h_1080,w_1920/f_webm,vc_vp9/v1743490368/barreno-studio/splash"
+          src="https://res.cloudinary.com/dobclogz9/video/upload/c_fill,h_2160,w_3840/v1/barreno-studio/splash4k"
           muted
           autoPlay
           loop
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute left-0 top-0 h-full w-full object-cover"
         />
-        <div className="h-screen z-90 bg-black">
-          <h1 className="py-[150px] tracking-[-3vw] font-extrabold leading-[380px] leading-none mix-blend-multiply bg-black lg:text-[400px] md:text-[128px] sm:text-[96px] text-[64px] text-off-blanco text-center tracking-[-1.44px]">
-            BARRENO <br />
+        <div className="z-90 h-screen w-full justify-center hover:cursor-[url('/BS_cursor64.png'),_auto]">
+          <h1
+            className="flex h-screen w-full items-center justify-center bg-noche-black pr-10 text-center font-extrabold text-off-blanco mix-blend-multiply"
+            // leading-none, tracking-[-3vw], text-[24vw]
+            style={{
+              fontSize: `${fontSize}vw`,
+              letterSpacing: `${-3 - scroll * 300}vw`,
+              paddingTop: `${scroll * 100}vh`,
+              lineHeight: `${1 - scroll * 2}`,
+              backgroundColor: `${scroll < 0.5 ? "var(--noche-black)" : "var(--off-blanco)"}`,
+            }}
+          >
+            BARRENO
+            <br />
             STUDIO
           </h1>
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            <a
+              className="z-10 flex flex-col items-center justify-center text-center"
+              href="#tag"
+            >
+              {/* <h3 className="font-heading-1 lg:text-4xl md:text-3xl">
+              see our work
+            </h3> */}
+              <motion.div
+                animate={{ y: [0, 5, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <ChevronDown />
+              </motion.div>
+            </a>
+          </div>
         </div>
       </div>
       {/* <div
@@ -93,33 +133,12 @@ const Hero = () => {
         />
       </div> */}
 
-      <section
-        ref={sectionRef}
-        className="relative h-screen w-screen flex justify-center hover:cursor-[url('/BS_cursor64.png'),_auto]"
-      >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <a
-            className="flex flex-col items-center justify-center z-10 text-center"
-            href="#tag"
-          >
-            {/* <h3 className="font-heading-1 lg:text-4xl md:text-3xl">
-              see our work
-            </h3> */}
-            <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <ChevronDown />
-            </motion.div>
-          </a>
-        </div>
+      <section ref={sectionRef} className="h-[100vh] w-full"></section>
 
-        <LogoAnimated />
-      </section>
+      <div id="target-1" className="h-[100vh] w-full"></div>
+
+      <LogoAnimated />
+      {/* scroll={scroll} entryPoint={0.4}  */}
     </>
   );
 };

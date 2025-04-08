@@ -1,34 +1,34 @@
 import React from "react";
 
 const navigationItems = {
-  "Brand": ["Our Mission", "Our Team", "Our Process"],
+  Brand: ["Our Mission", "Our Team", "Our Process"],
   "Selected Projects": ["University Of Melbourne", "YSL", "UNIQLO"],
-  "resources": ["Blog", "Contact"],
+  resources: ["Blog", "Contact"],
 };
 
 const Footer = () => {
   return (
     <footer className="w-full bg-off-blanco">
-      <div className="max-w-[1440px] mx-auto pt-8 pb-40 px-8 border-t border-[#d9d9d9]">
+      <div className="mx-auto max-w-[1440px] border-t border-[#d9d9d9] px-8 pt-8">
         <div className="grid grid-cols-4 gap-16">
           <div>
             <img
               src="/logo-white.png"
               alt="Logo"
-              className="w-[80px] h-[80px] bg-noche-black rounded-full p-2"
+              className="h-[80px] w-[80px] rounded-full bg-noche-black p-2"
             />
           </div>
 
           {Object.entries(navigationItems).map(([section, items]) => (
             <div key={section} className="flex flex-col gap-3">
-              <h3 className="font-heading-3-halyard text-xl text-noche-black mb-4 capitalize">
+              <h3 className="mb-4 font-heading-3-halyard text-xl capitalize text-noche-black">
                 {section}
               </h3>
               {items.map((item) => (
                 <a
                   key={item}
                   href="#"
-                  className="text-noche-black font-body-base"
+                  className="font-body-base text-noche-black"
                 >
                   {item}
                 </a>
@@ -37,13 +37,16 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-5 mt-20">
-          <p className="text-golden-hour-yellow text-center font-paragraph">
+        <div className="mt-20 flex items-center justify-center gap-5">
+          <p className="text-center font-paragraph text-noche-black">
             © 2025, Barreno Studio.
             <br />
             All Rights Reserved
           </p>
         </div>
+        <h1 className="z-90 text-center font-heading-1-halyard text-heading-1-halyard text-noche-black">
+          Barreno Studio
+        </h1>
       </div>
     </footer>
   );

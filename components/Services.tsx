@@ -1,10 +1,33 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { CldImage } from "next-cloudinary";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
 const Services = () => {
+  const images = [
+    {
+      id: 0,
+      src: "BTS_ahtn9n",
+      description: "Barreno Studio Team",
+      w: 459,
+      h: 325,
+    },
+    {
+      id: 1,
+      src: "barreno-studio/BTS3_SDSG",
+      description: "Barreno Studio Team",
+      w: 459,
+      h: 325,
+    },
+    {
+      id: 2,
+      src: "barreno-studio/BTS4-LLISH",
+      description: "Barreno Studio Team",
+      w: 459,
+      h: 325,
+    },
+  ];
+
   //   "Josh is absolutely amazing, and I offer my highest recommendation for his phenomenal talent!"
   // "It’s always a delightful experience when I get to work with Josh, who I strongly recommend for all of your creative needs. He is an exceptionally talented photographer and videographer who goes above and beyond to ensure your goals are met, taking the time and care to understand your needs. Beyond his incredible eye and attention to detail, he is one of the kindest, most understanding, and reliable people I have ever worked with."
   // — Leanne Ngo
@@ -45,36 +68,36 @@ const Services = () => {
   ];
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 gap-8 py-24 px-8">
+    <section className="grid grid-cols-1 gap-6 px-14 md:grid-cols-3">
       {/* First portfolio image */}
-      <Card className="w-full h-full border-0">
+      <Card className="h-full w-full border-0">
         <CardContent className="p-0">
-          <div className="flex overflow-hidden items-center justify-center">
+          <div className="flex items-center justify-center overflow-hidden">
             <CldImage
-              width="459"
-              height="325"
-              src="BTS_ahtn9n"
+              width={images[0].w}
+              height={images[0].h}
+              src={images[0].src}
               crop="fill"
-              alt="barreno studio team"
-              className="rounded-[20px]"
+              alt={images[0].description}
+              className="h-full w-full rounded-[20px] object-cover"
             />
           </div>
         </CardContent>
       </Card>
 
       {/* Our Services heading */}
-      <div className="w-full font-heading-1 text-off-blanco lg:text-7xl text-4xl leading-tight text-center">
+      <div className="w-full text-center font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1">
         Our Services
       </div>
 
       {/* Our Process section */}
-      <Card className="w-full bg-transparent border-0">
-        <CardContent className="py-8 text-off-blanco text-right flex flex-col justify-between h-full">
-          <p className="font-paragraph leading-paragraph text-sm lg:text-paragraph">
+      <Card className="w-full border-0 bg-transparent">
+        <CardContent className="flex h-full flex-col justify-between gap-6 p-0 py-6 text-right text-off-blanco">
+          <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
             <b>Align</b> - Your vision, our blueprint. We start by understanding
             exactly what you need—no cookie-cutter concepts, no assumptions.
           </p>
-          <p className="font-paragraph leading-paragraph text-sm lg:text-paragraph">
+          <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
             <b>Create</b> – Precision meets creativity. Every frame, every
             angle, every detail—crafted to make an impact.
           </p>
@@ -82,9 +105,9 @@ const Services = () => {
       </Card>
 
       {/* ACRA section */}
-      <Card className="w-full bg-transparent border-0 flex items-center justify-center">
-        <CardContent className="p-0 flex text-off-blanco text-right">
-          <p className="font-paragraph md:text-4xl text-2xl space-y-6">
+      <Card className="flex w-full items-center justify-center border-0 bg-transparent">
+        <CardContent className="flex p-0 text-right text-off-blanco">
+          <p className="space-y-6 font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
             ALIGN - CREATE - <br />
             REFINE - AMPLIFY
           </p>
@@ -92,28 +115,28 @@ const Services = () => {
       </Card>
 
       {/* Second portfolio image */}
-      <Card className="w-full h-full border-0">
-        <CardContent className="p-0 ">
-          <div className="flex bg-cover overflow-hidden items-center justify-center">
+      <Card className="h-full w-full border-0">
+        <CardContent className="p-0">
+          <div className="flex items-center justify-center overflow-hidden bg-cover">
             <CldImage
-              width="459"
-              height="325"
-              src="BTS_ahtn9n"
+              width={images[1].w}
+              height={images[1].h}
+              src={images[1].src}
               crop="fill"
-              alt="barreno studio team"
-              className="rounded-[20px]"
+              alt={images[1].description}
+              className="h-full w-full rounded-[20px] object-cover"
             />
           </div>
         </CardContent>
       </Card>
 
       {/* Our Process section ctd. */}
-      <Card className="w-full bg-transparent border-0">
-        <CardContent className="py-16 text-off-blanco text-right flex flex-col justify-between h-full">
-          <p className="font-paragraph leading-paragraph text-sm lg:text-paragraph">
+      <Card className="w-full border-0 bg-transparent">
+        <CardContent className="flex h-full flex-col justify-between gap-6 p-0 py-16 text-right text-off-blanco">
+          <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
             <b>Refine</b> - Because good isn’t good enough.
           </p>
-          <p className="font-paragraph leading-paragraph text-sm lg:text-paragraph">
+          <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
             <b>Amplify</b> – Your story, ready to stand out.
           </p>
         </CardContent>
@@ -121,27 +144,28 @@ const Services = () => {
 
       {/* Infinite Moving Cards */}
       <div className="col-span-2 h-[325px]">
-        <h3 className="text-[32px] text-left text-off-blanco leading-8 mt-6">
+        <h3 className="mt-6 text-left font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
           WHAT OUR CLIENTS THINK
         </h3>
         <InfiniteMovingCards
           items={testimonials}
           direction="right"
           speed="slow"
+          pauseOnHover={true}
         />
       </div>
 
       {/* Third portfolio image */}
-      <Card className="w-full h-full border-0">
-        <CardContent className="p-0 ">
-          <div className="flex bg-cover overflow-hidden items-center justify-center">
+      <Card className="h-[325px] w-full border-0">
+        <CardContent className="p-0">
+          <div className="flex items-center justify-center overflow-hidden bg-cover">
             <CldImage
-              width="459"
-              height="325"
-              src="BTS_ahtn9n"
+              width={images[2].w}
+              height={images[2].h}
+              src={images[2].src}
               crop="fill"
-              alt="barreno studio team"
-              className="rounded-[20px]"
+              alt={images[2].description}
+              className="h-full w-full rounded-[20px] object-cover"
             />
           </div>
         </CardContent>
