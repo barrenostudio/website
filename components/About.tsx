@@ -17,7 +17,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="target-2" className="flex justify-center px-14">
+    <section id="target-2" className="flex justify-center px-8 md:px-14">
       <Card className="flex flex-col gap-4 border-0 bg-transparent shadow-none md:flex-row">
         <CardContent className="w-full p-0 md:w-1/2 lg:w-3/5">
           <div className="w-full overflow-clip object-fill">

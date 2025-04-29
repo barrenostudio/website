@@ -22,16 +22,16 @@ const brandList = [
 
 const Brands = () => {
   return (
-    <div className="bg-off-blanco w-full p-3">
-      <div className="flex flex-wrap w-full items-center justify-center">
-        <div className="flex pl-5 font-heading-3 w-full lg:w-1/5 md:text-xl lg:text-3xl text-noche-black">
+    <div className="w-full bg-off-blanco p-3">
+      <div className="flex w-full flex-wrap items-center justify-center">
+        <div className="flex w-full pl-5 font-heading-3 text-noche-black md:text-xl lg:w-1/5 lg:text-3xl">
           BRAND COLLABORATIONS
         </div>
         <div className="flex w-full lg:w-4/5">
           <InfiniteMovingCards
             items={brandList}
             direction="right"
-            speed="slow"
+            speed="fast"
             className="w-full"
           />
         </div>

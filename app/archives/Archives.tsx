@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { CldImage } from "next-cloudinary";
 import Link from "next/link";
+import { allProjects } from "@/lib/data";
 
 const Archives = () => {
   const sectionData = {
@@ -15,70 +16,27 @@ const Archives = () => {
     imageSrc: "team_shot2_yr1x4d",
   };
 
-  const projects = [
-    {
-      id: 0,
-      src: "World_Mental_Health_Day-352_jwhae6",
-      description: "Mental Health Day",
-      align: ["end", "start"],
-      w: 480,
-      h: 600,
-    },
-    {
-      id: 1,
-      src: "OrientationWeekDay1-1_h0zlcn",
-      description: "Orientation Week",
-      align: ["end", "end"],
-      w: 480,
-      h: 325,
-    },
-    {
-      id: 2,
-      src: "https://res.cloudinary.com/dobclogz9/video/upload/q_auto/c_fill,g_auto,h_600,w_480/v1743490368/Monique_x_YSL_Beauty_ffpc7o.webm",
-      description: "YSL Beauty",
-      align: ["start", "end"],
-      w: 480,
-      h: 600,
-    },
-    {
-      id: 3,
-      src: "https://res.cloudinary.com/dobclogz9/video/upload/c_limit,h_480,w_600/uniqlo__lifewear_for_all_seasons_2160p_o5jcf9",
-      description: "uniqlo",
-      align: ["end", "end"],
-      w: 600,
-      h: 480,
-    },
-    {
-      id: 4,
-      src: "Gabriel_Gabby_Couple_Shoot-51_wmt0tg",
-      description: "Gabriel & Gabby engagement",
-      align: ["start", "end"],
-      w: 480,
-      h: 325,
-    },
-  ];
-
   return (
     <section
-      className="grid h-screen w-full grid-cols-1 gap-8 px-14 py-14 md:grid-cols-2 lg:grid-cols-3"
+      className="grid h-screen w-full grid-cols-1 gap-8 px-8 py-14 md:grid-cols-2 md:px-14 lg:grid-cols-3"
       style={{
         gridAutoRows: "minmax(0, 1fr)", // Ensures rows shrink proportionally
       }}
     >
       <Card className="relative col-span-1 row-span-2 flex h-full w-full border-0">
-        <Link href={`/archives/${projects[0].id}`} className="h-full w-full">
+        <Link href={`/archives/${allProjects[0].id}`} className="h-full w-full">
           <CldImage
-            width={projects[0].w}
-            height={projects[0].h}
-            src={projects[0].src}
+            width={allProjects[0].w}
+            height={allProjects[0].h}
+            src={allProjects[0].src[0]}
             crop="fill"
-            alt={projects[0].description}
+            alt={allProjects[0].id}
             className="h-full w-full rounded-[20px] object-cover"
           />
           <div
-            className={`absolute inset-2 m-4 flex items-${projects[0].align[0]} justify-${projects[0].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
+            className={`absolute inset-2 m-4 flex items-${allProjects[0].align[0]} justify-${allProjects[0].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
           >
-            {projects[0].description}
+            {allProjects[0].title}
           </div>
         </Link>
       </Card>
@@ -93,25 +51,25 @@ const Archives = () => {
 
       <Card className="relative col-span-1 row-span-1 flex h-full w-full border-0">
         <CldImage
-          width={projects[1].w}
-          height={projects[1].h}
-          src={projects[1].src}
+          width={allProjects[1].w}
+          height={allProjects[1].h}
+          src={allProjects[1].src[0]}
           crop="fill"
-          alt={projects[1].description}
+          alt={allProjects[1].id}
           className="h-full w-full rounded-[20px] object-cover"
         />
         <div
-          className={`absolute inset-2 m-4 flex items-${projects[1].align[0]} justify-${projects[1].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
+          className={`absolute inset-2 m-4 flex items-${allProjects[1].align[0]} justify-${allProjects[1].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
         >
-          {projects[1].description}
+          {allProjects[1].title}
         </div>
       </Card>
 
       <Card className="relative col-span-1 row-span-2 flex h-full w-full border-0">
         <video
-          width={projects[2].w}
-          height={projects[2].h}
-          src={projects[2].src}
+          width={allProjects[2].w}
+          height={allProjects[2].h}
+          src={allProjects[2].src[0]}
           muted
           autoPlay
           loop
@@ -119,17 +77,17 @@ const Archives = () => {
           className="h-full w-full rounded-[20px] object-cover"
         />
         <div
-          className={`absolute inset-2 m-4 flex items-${projects[2].align[0]} justify-${projects[2].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
+          className={`absolute inset-2 m-4 flex items-${allProjects[2].align[0]} justify-${allProjects[2].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
         >
-          {projects[2].description}
+          {allProjects[2].title}
         </div>
       </Card>
 
       <Card className="relative col-span-1 row-span-1 flex h-full w-full border-0">
         <video
-          width={projects[3].w}
-          height={projects[3].h}
-          src={projects[3].src}
+          width={allProjects[3].w}
+          height={allProjects[3].h}
+          src={allProjects[3].src[0]}
           muted
           autoPlay
           loop
@@ -137,25 +95,25 @@ const Archives = () => {
           className="h-full w-full rounded-[20px] object-cover"
         />
         <div
-          className={`absolute inset-2 m-4 flex items-${projects[3].align[0]} justify-${projects[3].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
+          className={`absolute inset-2 m-4 flex items-${allProjects[3].align[0]} justify-${allProjects[3].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
         >
-          {projects[3].description}
+          {allProjects[3].title}
         </div>
       </Card>
 
       <Card className="relative col-span-1 row-span-1 flex h-full w-full border-0">
         <CldImage
-          width={projects[4].w}
-          height={projects[4].h}
-          src={projects[4].src}
+          width={allProjects[4].w}
+          height={allProjects[4].h}
+          src={allProjects[4].src[0]}
           crop="fill"
-          alt={projects[4].description}
+          alt={allProjects[4].id}
           className="h-full w-full rounded-[20px] object-cover"
         />
         <div
-          className={`absolute inset-2 m-4 flex items-${projects[4].align[0]} justify-${projects[4].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
+          className={`absolute inset-2 m-4 flex items-${allProjects[4].align[0]} justify-${allProjects[4].align[1]} font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph`}
         >
-          {projects[4].description}
+          {allProjects[4].title}
         </div>
       </Card>
       {/* <Card className="col-span-1 flex h-full w-full flex-row border-0">

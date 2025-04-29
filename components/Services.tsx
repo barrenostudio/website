@@ -68,9 +68,9 @@ const Services = () => {
   ];
 
   return (
-    <section className="grid grid-cols-1 gap-6 px-14 md:grid-cols-3">
+    <section className="grid grid-cols-1 gap-6 px-8 md:grid-cols-3 md:px-14">
       {/* First portfolio image */}
-      <Card className="h-full w-full border-0">
+      <Card className="col-span-1 h-full w-full border-0">
         <CardContent className="p-0">
           <div className="flex items-center justify-center overflow-hidden">
             <CldImage
@@ -143,20 +143,20 @@ const Services = () => {
       </Card>
 
       {/* Infinite Moving Cards */}
-      <div className="col-span-2 h-[325px]">
+      <div className="col-span-1 h-full md:col-span-2">
         <h3 className="mt-6 text-left font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
           WHAT OUR CLIENTS THINK
         </h3>
         <InfiniteMovingCards
           items={testimonials}
           direction="right"
-          speed="slow"
+          speed="normal"
           pauseOnHover={true}
         />
       </div>
 
       {/* Third portfolio image */}
-      <Card className="h-[325px] w-full border-0">
+      <Card className="h-full w-full border-0">
         <CardContent className="p-0">
           <div className="flex items-center justify-center overflow-hidden bg-cover">
             <CldImage

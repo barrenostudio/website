@@ -2,7 +2,7 @@ import React from "react";
 
 const Tag = () => {
   return (
-    <section className="-mt-[160px] flex w-full flex-col items-center justify-center gap-6 px-14 md:flex-row">
+    <section className="-mt-[160px] flex w-full flex-col items-center justify-center gap-6 px-8 md:flex-row md:px-14">
       <div className="flex w-full border-none bg-transparent md:w-1/2">
         <div className="flex text-center font-heading-1 text-heading-1 text-off-blanco">
           no story left untold

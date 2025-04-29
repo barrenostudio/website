@@ -71,7 +71,7 @@ const Hero = () => {
             // leading-none, tracking-[-3vw], text-[24vw]
             style={{
               fontSize: `${fontSize}vw`,
-              letterSpacing: `${-3 - scroll * 300}vw`,
+              letterSpacing: `${-3 - scroll * 100}vw`,
               paddingTop: `${scroll * 100}vh`,
               lineHeight: `${1 - scroll * 2}`,
               backgroundColor: `${scroll < 0.5 ? "var(--noche-black)" : "var(--off-blanco)"}`,

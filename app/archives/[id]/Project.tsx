@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CldImage } from "next-cloudinary";
-import { ProjectType } from "./page";
+import { ProjectType } from "@/lib/data";
 
 const Project = ({ project }: { project: ProjectType }) => {
   if (!project) {
@@ -9,7 +9,7 @@ const Project = ({ project }: { project: ProjectType }) => {
 
   return (
     <section
-      className="grid h-screen w-full grid-cols-1 gap-8 px-14 py-14 md:grid-cols-2 lg:grid-cols-3"
+      className="grid h-screen w-full grid-cols-1 gap-8 px-8 py-14 md:grid-cols-2 md:px-14 lg:grid-cols-3"
       style={{
         gridAutoRows: "minmax(0, 1fr)", // Ensures rows shrink proportionally
       }}

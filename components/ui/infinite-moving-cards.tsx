@@ -72,6 +72,7 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+  // Image scroll
   if (items.some((item) => item.img)) {
     return (
       <div
@@ -97,25 +98,19 @@ export const InfiniteMovingCards = ({
                     <Image
                       src={item.img}
                       alt={item.name}
-                      layout="fill"
-                      objectFit="fill"
+                      fill={true}
+                      className="object-fill"
                     />
                   </div>
                 )}
-                <span className="flex flex-col gap-1">
-                  <span className="text-md font-paragraph leading-[1.6] text-black">
-                    {item.name}
-                  </span>
-                  <span className="font-paragraph text-sm leading-[1.6] text-gray-400">
-                    {item.title}
-                  </span>
-                </span>
               </div>
             </li>
           ))}
         </ul>
       </div>
     );
+
+    // Card Scroll
   } else {
     return (
       <div
@@ -135,7 +130,7 @@ export const InfiniteMovingCards = ({
         >
           {items.map((item) => (
             <li
-              className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,theme(colors.off-blanco),theme(colors.off-blanco))] px-8 py-6 md:w-[450px]"
+              className="relative w-[350px] max-w-full shrink-0 rounded-[20px] bg-[linear-gradient(180deg,theme(colors.off-blanco),theme(colors.off-blanco))] px-8 py-6 md:w-[450px]"
               key={item.name}
             >
               <blockquote>
@@ -143,7 +138,7 @@ export const InfiniteMovingCards = ({
                   aria-hidden="true"
                   className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
                 ></div>
-                <span className="relative z-20 font-paragraph text-sm leading-[1.6] text-black">
+                <span className="relative z-20 font-paragraph text-paragraph-sm text-black md:text-paragraph-md lg:text-paragraph">
                   {item.text}
                 </span>
                 <div className="relative z-20 mt-6 flex flex-row items-center">
@@ -152,8 +147,8 @@ export const InfiniteMovingCards = ({
                       <Image
                         src={item.img}
                         alt={item.name}
-                        layout="fill"
-                        objectFit="cover"
+                        fill={true}
+                        className="object-fill"
                       />
                     </div>
                   )}

@@ -17,10 +17,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="flex justify-center px-14">
-      <Card className="flex flex-row gap-10 border-0 bg-transparent shadow-none">
+    <section className="flex justify-center px-8 md:px-14">
+      <Card className="flex flex-col gap-10 border-0 bg-transparent shadow-none md:flex-row">
         <CardContent className="p-0">
-          <div className="h-[600px] w-full overflow-clip bg-cover bg-center object-fill">
+          <div className="h-full w-full overflow-clip bg-cover bg-center object-fill">
             <CldImage
               width="800"
               height="600"
@@ -32,7 +32,7 @@ const Contact = () => {
           </div>
         </CardContent>
 
-        <CardContent className="flex max-w-[407px] flex-col justify-center gap-[79px] p-0">
+        <CardContent className="flex flex-col justify-center gap-[79px] p-0">
           <h2 className="font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1">
             {sectionData.heading}
           </h2>
@@ -51,7 +51,7 @@ const Contact = () => {
               </p>
             ))}
             {/* CTA Button */}
-            <Button className="mt-4 rounded-md bg-off-blanco p-6 font-paragraph text-paragraph-sm text-noche-black underline md:text-paragraph-md lg:text-paragraph">
+            <Button className="mt-4 rounded-md bg-off-blanco p-6 font-paragraph text-paragraph-sm text-noche-black underline hover:text-off-blanco md:text-paragraph-md lg:text-paragraph">
               Ready to turn heads?
             </Button>
             <div>

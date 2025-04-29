@@ -14,15 +14,7 @@ const TextAnimation = ({ text }: { text: string }) => {
   );
 };
 
-function LogoAnimated(
-  {
-    //   scroll,
-    //   entryPoint,
-    // }: {
-    //   scroll: number;
-    //   entryPoint: number;
-  }
-) {
+function LogoAnimated() {
   const [aboutInView, setAboutInView] = useState(false);
 
   useEffect(() => {
@@ -34,7 +26,7 @@ function LogoAnimated(
       ([entry]) => {
         setAboutInView(entry.isIntersecting);
       },
-      { threshold: 0.1 } // Trigger when 50% of the About section is visible
+      { threshold: 0.1 } // Trigger when 10% of the About section is visible
     );
 
     observer.observe(aboutSection);
@@ -48,7 +40,7 @@ function LogoAnimated(
       style={{
         transform: aboutInView
           ? "translateY(0vh)" // Move down when About section is visible
-          : "translateY(20vh)",
+          : "translateY(30vh)",
         // : scroll > entryPoint
         //   ? "translateY(0vh)"
         //   : // ? `translateY(${(1 - (scroll - entryPoint) / (1 - entryPoint)) * 20}vh)`
