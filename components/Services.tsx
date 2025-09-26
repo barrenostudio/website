@@ -2,6 +2,12 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { CldImage } from "next-cloudinary";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
+import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+  imageVariants,
+} from "@/lib/motionVariants";
 
 const Services = () => {
   const images = [
@@ -68,79 +74,98 @@ const Services = () => {
   ];
 
   return (
-    <section className="grid grid-cols-1 gap-6 px-8 md:grid-cols-3 md:px-14">
+    <motion.section
+      className="grid grid-cols-1 gap-6 px-8 md:grid-cols-3 md:px-14"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
       {/* First portfolio image */}
-      <Card className="col-span-1 h-full w-full border-0">
-        <CardContent className="p-0">
-          <div className="flex items-center justify-center overflow-hidden">
-            <CldImage
-              width={images[0].w}
-              height={images[0].h}
-              src={images[0].src}
-              crop="fill"
-              alt={images[0].description}
-              className="h-full w-full rounded-[20px] object-cover"
-            />
-          </div>
-        </CardContent>
-      </Card>
+      <motion.div variants={imageVariants}>
+        <Card className="col-span-1 h-full w-full border-0">
+          <CardContent className="p-0">
+            <div className="flex items-center justify-center overflow-hidden">
+              <CldImage
+                width={images[0].w}
+                height={images[0].h}
+                src={images[0].src}
+                crop="fill"
+                alt={images[0].description}
+                className="h-full w-full rounded-[20px] object-cover"
+              />
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Our Services heading */}
-      <div className="w-full text-center font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1">
-        Our Services
-      </div>
+      <motion.div variants={itemVariants}>
+        <div className="w-full text-center font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1">
+          Our Services
+        </div>
+      </motion.div>
 
       {/* Our Process section */}
-      <Card className="w-full border-0 bg-transparent">
-        <CardContent className="flex h-full flex-col justify-between gap-6 p-0 py-6 text-right text-off-blanco">
-          <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
-            <b>Align</b> - Your vision, our blueprint. We start by understanding
-            exactly what you need—no cookie-cutter concepts, no assumptions.
-          </p>
-          <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
-            <b>Create</b> – Precision meets creativity. Every frame, every
-            angle, every detail—crafted to make an impact.
-          </p>
-        </CardContent>
-      </Card>
+      <motion.div variants={itemVariants}>
+        <Card className="w-full border-0 bg-transparent">
+          <CardContent className="flex h-full flex-col justify-between gap-6 p-0 py-6 text-right text-off-blanco">
+            <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
+              <b>Align</b> - Your vision, our blueprint. We start by
+              understanding exactly what you need—no cookie-cutter concepts, no
+              assumptions.
+            </p>
+            <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
+              <b>Create</b> – Precision meets creativity. Every frame, every
+              angle, every detail—crafted to make an impact.
+            </p>
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* ACRA section */}
-      <Card className="flex w-full items-center justify-center border-0 bg-transparent">
-        <CardContent className="flex p-0 text-right text-off-blanco">
-          <p className="space-y-6 font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
-            ALIGN - CREATE - <br />
-            REFINE - AMPLIFY
-          </p>
-        </CardContent>
-      </Card>
+      <motion.div variants={itemVariants}>
+        <Card className="flex w-full items-center justify-center border-0 bg-transparent">
+          <CardContent className="flex p-0 text-right text-off-blanco">
+            <p className="space-y-6 font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
+              ALIGN - CREATE - <br />
+              REFINE - AMPLIFY
+            </p>
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Second portfolio image */}
-      <Card className="h-full w-full border-0">
-        <CardContent className="p-0">
-          <div className="flex items-center justify-center overflow-hidden bg-cover">
-            <CldImage
-              width={images[1].w}
-              height={images[1].h}
-              src={images[1].src}
-              crop="fill"
-              alt={images[1].description}
-              className="h-full w-full rounded-[20px] object-cover"
-            />
-          </div>
-        </CardContent>
-      </Card>
+      <motion.div variants={imageVariants}>
+        <Card className="h-full w-full border-0">
+          <CardContent className="p-0">
+            <div className="flex items-center justify-center overflow-hidden bg-cover">
+              <CldImage
+                width={images[1].w}
+                height={images[1].h}
+                src={images[1].src}
+                crop="fill"
+                alt={images[1].description}
+                className="h-full w-full rounded-[20px] object-cover"
+              />
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Our Process section ctd. */}
-      <Card className="w-full border-0 bg-transparent">
-        <CardContent className="flex h-full flex-col justify-between gap-6 p-0 py-16 text-right text-off-blanco">
-          <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
-            <b>Refine</b> - Because good isn’t good enough.
-          </p>
-          <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
-            <b>Amplify</b> – Your story, ready to stand out.
-          </p>
-        </CardContent>
-      </Card>
+      <motion.div variants={itemVariants}>
+        <Card className="w-full border-0 bg-transparent">
+          <CardContent className="flex h-full flex-col justify-between gap-6 p-0 py-16 text-right text-off-blanco">
+            <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
+              <b>Refine</b> - Because good isn’t good enough.
+            </p>
+            <p className="font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph">
+              <b>Amplify</b> – Your story, ready to stand out.
+            </p>
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Infinite Moving Cards */}
       <div className="col-span-1 h-full md:col-span-2">
@@ -156,21 +181,23 @@ const Services = () => {
       </div>
 
       {/* Third portfolio image */}
-      <Card className="h-full w-full border-0">
-        <CardContent className="p-0">
-          <div className="flex items-center justify-center overflow-hidden bg-cover">
-            <CldImage
-              width={images[2].w}
-              height={images[2].h}
-              src={images[2].src}
-              crop="fill"
-              alt={images[2].description}
-              className="h-full w-full rounded-[20px] object-cover"
-            />
-          </div>
-        </CardContent>
-      </Card>
-    </section>
+      <motion.div variants={imageVariants}>
+        <Card className="h-full w-full border-0">
+          <CardContent className="p-0">
+            <div className="flex items-center justify-center overflow-hidden bg-cover">
+              <CldImage
+                width={images[2].w}
+                height={images[2].h}
+                src={images[2].src}
+                crop="fill"
+                alt={images[2].description}
+                className="h-full w-full rounded-[20px] object-cover"
+              />
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
+    </motion.section>
   );
 };
 

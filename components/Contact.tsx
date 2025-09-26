@@ -1,8 +1,10 @@
 import React from "react";
+import { motion } from "framer-motion";
 import BloomEmbed from "./ui/BloomEmbed";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CldImage } from "next-cloudinary";
+import { containerVariants, itemVariants } from "@/lib/motionVariants";
 
 const Contact = () => {
   const sectionData = {
@@ -17,10 +19,19 @@ const Contact = () => {
   };
 
   return (
-    <section className="flex justify-center px-8 md:px-14">
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+      className="flex justify-center px-8 md:px-14"
+    >
       <Card className="flex flex-col gap-10 border-0 bg-transparent shadow-none md:flex-row">
         <CardContent className="p-0">
-          <div className="h-full w-full overflow-clip bg-cover bg-center object-fill">
+          <motion.div
+            variants={itemVariants}
+            className="h-full w-full overflow-clip bg-cover bg-center object-fill"
+          >
             <CldImage
               width="800"
               height="600"
@@ -29,38 +40,47 @@ const Contact = () => {
               alt="barreno studio team"
               className="rounded-[20px]"
             />
-          </div>
+          </motion.div>
         </CardContent>
 
         <CardContent className="flex flex-col justify-center gap-[79px] p-0">
-          <h2 className="font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1">
+          <motion.h2
+            variants={itemVariants}
+            className="font-heading-1 text-heading-1-sm text-off-blanco md:text-heading-1-md lg:text-heading-1"
+          >
             {sectionData.heading}
-          </h2>
+          </motion.h2>
 
           <div className="text-off-blanco">
-            <span className="mb-4 block font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3">
+            <motion.span
+              variants={itemVariants}
+              className="mb-4 block font-heading-3 text-heading-3-sm text-off-blanco md:text-heading-3-md lg:text-heading-3"
+            >
               {sectionData.subheading}
-            </span>
+            </motion.span>
 
             {sectionData.description.map((paragraph, index) => (
-              <p
+              <motion.p
                 key={index}
+                variants={itemVariants}
                 className="mb-4 font-paragraph text-paragraph-sm text-off-blanco md:text-paragraph-md lg:text-paragraph"
               >
                 {paragraph}
-              </p>
+              </motion.p>
             ))}
             {/* CTA Button */}
-            <Button className="mt-4 rounded-md bg-off-blanco p-6 font-paragraph text-paragraph-sm text-noche-black underline hover:text-off-blanco md:text-paragraph-md lg:text-paragraph">
-              Ready to turn heads?
-            </Button>
-            <div>
+            <motion.div variants={itemVariants}>
+              <Button className="mt-4 rounded-md bg-off-blanco p-6 font-paragraph text-paragraph-sm text-noche-black underline hover:text-off-blanco md:text-paragraph-md lg:text-paragraph">
+                Ready to turn heads?
+              </Button>
+            </motion.div>
+            <motion.div variants={itemVariants}>
               <BloomEmbed formId="l0zdgewwx73go" />
-            </div>
+            </motion.div>
           </div>
         </CardContent>
       </Card>
-    </section>
+    </motion.section>
 
     // <section className="flex flex-col items-center justify-center py-16 w-full text-off-blanco">
     //   <Card className="bg-transparent border-none max-w-lg">
